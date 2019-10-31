@@ -1,10 +1,14 @@
 package com.example.mediinf.models;
 
+import com.orm.dsl.Table;
+
+@Table
 public class User {
 
+    private Long id;
     private String Nombre;
     private String Apellido;
-    private Integer DNI;
+    private String DNI;
     private String Correo;
     private String Alergia;
     private String Contraseña;
@@ -13,13 +17,21 @@ public class User {
     public User() {
     }
 
-    public User(String nombre, String apellido, Integer DNI, String correo, String alergia, String contraseña) {
+    public User(String nombre, String apellido, String dni, String correo, String alergia, String contraseña) {
         Nombre = nombre;
         Apellido = apellido;
-        this.DNI = DNI;
+        DNI = dni;
         Correo = correo;
         Alergia = alergia;
         Contraseña = contraseña;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -38,11 +50,11 @@ public class User {
         Apellido = apellido;
     }
 
-    public Integer getDNI() {
+    public String getDNI() {
         return DNI;
     }
 
-    public void setDNI(Integer DNI) {
+    public void setDNI(String DNI) {
         this.DNI = DNI;
     }
 
@@ -73,9 +85,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
+                "id=" + id +
                 "Nombre='" + Nombre + '\'' +
                 ", Apellido='" + Apellido + '\'' +
-                ", DNI=" + DNI +
+                ", DNI='" + DNI + '\'' +
                 ", Correo='" + Correo + '\'' +
                 ", Alergia='" + Alergia + '\'' +
                 ", Contraseña='" + Contraseña + '\'' +

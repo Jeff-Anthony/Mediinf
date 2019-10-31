@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
     tools:context=".activity.InicioMedi">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="Busqueda de Medicamentos"
-        />
-
-
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo_medico2"
         />
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/titulo_busqueda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="26dp"
+        android:text="Busqueda de Medicamentos"/>
+
+
+    <SearchView
+        android:id="@+id/busqueda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo_busqueda"
+        />
+
+    <LinearLayout
+        android:layout_below="@+id/busqueda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp">
@@ -33,7 +48,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="10dp"
-            android:background="@drawable/fragments_button"
+            android:alpha="0.7"
+            android:textColor="#FFFF"
+            android:background="@drawable/indicador_selecto"
             android:text="Generales"
 
             />
@@ -43,7 +60,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="10dp"
-            android:background="@drawable/fragments_button"
+            android:alpha="0.7"
+            android:textColor="#FFFF"
+            android:background="@drawable/indicador_selecto"
             android:text="Laboratorio"
             />
         <Button
@@ -51,7 +70,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="10dp"
-            android:background="@drawable/fragments_button"
+            android:alpha="0.7"
+            android:textColor="#FFFF"
+            android:background="@drawable/indicador_selecto"
             android:text="Naturales"
 
             />
@@ -63,10 +84,14 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="-15dp"
-        android:background="#3b83bd">
+        android:background="#d8000000"
+        android:alpha="0.7">
+
+
+
     </RelativeLayout>
 
+    </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

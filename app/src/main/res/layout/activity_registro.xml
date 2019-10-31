@@ -49,6 +49,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
+            android:id="@+id/nombre_registro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -63,6 +64,7 @@
             />
 
         <EditText
+            android:id="@+id/apellido_registro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -77,6 +79,7 @@
             />
 
         <EditText
+            android:id="@+id/dni_registro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -93,6 +96,7 @@
             />
 
         <EditText
+            android:id="@+id/correo_registro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -107,6 +111,7 @@
             />
 
         <EditText
+            android:id="@+id/alergia_registro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -116,12 +121,13 @@
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:textColor="#FFFFFF"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:background="@drawable/text_box"
             android:hint="Ingrese una Alergia"
             />
 
         <EditText
+            android:id="@+id/contraseña_registro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -143,6 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:onClick="callRegister"
             android:background="@drawable/button_ripple"
             android:textColor="@drawable/button_select"
             android:radius="50dp"
