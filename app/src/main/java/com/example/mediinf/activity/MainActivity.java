@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonregistro;
     private ProgressBar progressBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
         buttonregistro = findViewById(R.id.button_registro);
         buttoninicio = findViewById(R.id.button_ingreso);
         progressBar = findViewById(R.id.ProgresBar);
+
+
+
+
+
+
 
 
         buttoninicio.setOnClickListener(new View.OnClickListener() {

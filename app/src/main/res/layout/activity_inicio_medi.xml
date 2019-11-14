@@ -8,90 +8,143 @@
     android:orientation="vertical"
     tools:context=".activity.InicioMedi">
 
-    <ImageView
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fondo_medico2"
-        />
+        android:fitsSystemWindows="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/titulo_busqueda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="26dp"
-        android:text="Busqueda de Medicamentos"/>
-
-
-    <SearchView
-        android:id="@+id/busqueda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/titulo_busqueda"
-        />
-
-    <LinearLayout
-        android:layout_below="@+id/busqueda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
-
-
-
-        <Button
-            android:id="@+id/fragment_1"
-            android:layout_width="wrap_content"
+        <!-- Pantalla Principal -->
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <!-- Barra de título -->
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="10dp"
-            android:alpha="0.7"
-            android:textColor="#FFFF"
-            android:background="@drawable/indicador_selecto"
-            android:text="Generales"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        </android.support.design.widget.AppBarLayout>
 
-            />
+        <!-- Bloque Contenido -->
+        <RelativeLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <Button
-            android:id="@+id/fragment_2"
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fondo_medico2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titulo_busqueda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="26dp"
+                    android:text="Busqueda de Medicamentos"/>
+
+
+                <SearchView
+                    android:id="@+id/busqueda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titulo_busqueda"
+                    />
+
+                <LinearLayout
+                    android:layout_below="@+id/busqueda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp">
+
+
+
+                    <Button
+                        android:id="@+id/fragment_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:alpha="0.7"
+                        android:textColor="#FFFF"
+                        android:background="@drawable/indicador_selecto"
+                        android:text="Generales"
+
+                        />
+
+                    <Button
+                        android:id="@+id/fragment_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:alpha="0.7"
+                        android:textColor="#FFFF"
+                        android:background="@drawable/indicador_selecto"
+                        android:text="Laboratorio"
+                        />
+                    <Button
+                        android:id="@+id/fragment_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:alpha="0.7"
+                        android:textColor="#FFFF"
+                        android:background="@drawable/indicador_selecto"
+                        android:text="Naturales"
+
+                        />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#d8000000"
+                    android:alpha="0.7">
+
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        </android.support.design.widget.CoordinatorLayout>
+        <!-- Menú Deslizante -->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10dp"
-            android:alpha="0.7"
-            android:textColor="#FFFF"
-            android:background="@drawable/indicador_selecto"
-            android:text="Laboratorio"
-            />
-        <Button
-            android:id="@+id/fragment_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10dp"
-            android:alpha="0.7"
-            android:textColor="#FFFF"
-            android:background="@drawable/indicador_selecto"
-            android:text="Naturales"
-
-            />
-
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#d8000000"
-        android:alpha="0.7">
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/navigation_header"
+            app:menu="@menu/navigation" />
+    </android.support.v4.widget.DrawerLayout>
 
 
 
-    </RelativeLayout>
 
-    </LinearLayout>
 
 
 </RelativeLayout>

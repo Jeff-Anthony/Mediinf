@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mediinf">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:name="com.orm.SugarApp"
         android:allowBackup="true"
@@ -9,18 +9,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activity.InfoActivity"></activity>
 
-
-        <meta-data android:name="DATABASE" android:value="sugarormapp.db" />
-        <meta-data android:name="VERSION" android:value="2" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data  android:name="DOMAIN_PACKAGE_NAME" android:value="com.example.mediinf.models"/>
-
-
-        <activity android:name=".activity.InfoSplashActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".activity.InicioMedi" />
+        <activity
+            android:name=".activity.InfoSplashActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.InicioMedi"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.RegistroActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -33,9 +31,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <meta-data
+            android:name="DATABASE"
+            android:value="sugarormapp.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="2" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.example.mediinf.models" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

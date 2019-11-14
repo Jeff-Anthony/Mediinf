@@ -11,14 +11,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.mediinf.R;
-import com.example.mediinf.repositories.UserRepository;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegistroActivity extends AppCompatActivity{
 
     EditText nombre, apellido, dni, correo, alergia, contraseña;
 
-    private Button buttonregresar;
+    Button buttonregresar, buttonregistro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +41,13 @@ public class RegistroActivity extends AppCompatActivity{
         alergia = findViewById(R.id.alergia_registro);
         contraseña = findViewById(R.id.contraseña_registro);
 
+        buttonregistro = findViewById(R.id.button_usuario_registro);
+        buttonregistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showRegistro("http://192.168.1.14:80/Mediinft/Register.php");
+            }
+        });
 
 
         buttonregresar = findViewById(R.id.button_regreso);
@@ -59,27 +75,36 @@ public class RegistroActivity extends AppCompatActivity{
 
 
 
-    public void callRegister(View view){
-        final String name = nombre.getText().toString();
-        final String ape = apellido.getText().toString();
-        final String DNI = dni.getText().toString();
-        final String corr = correo.getText().toString();
-        final String ale = alergia.getText().toString();
-        final String con = contraseña.getText().toString();
+    public void showRegistro(String URL){
 
-        if(name.isEmpty() || ape.isEmpty() || DNI.isEmpty()|| corr.isEmpty()|| ale.isEmpty()|| con.isEmpty()){
-            Toast.makeText(this, "Completa los Campos faltantes", Toast.LENGTH_SHORT).show();
-            return;
-        }else{
 
-            Toast.makeText(this, "Registro realizado con Exito !!", Toast.LENGTH_SHORT).show();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getApplicationContext(), "Registro Exitoso", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }){
 
-        }
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> parametros = new HashMap<String,String>();
+                parametros.put("nombre",nombre.getText().toString());
+                parametros.put("apellido",apellido.getText().toString());
+                parametros.put("dni",dni.getText().toString());
+                parametros.put("correo",correo.getText().toString());
+                parametros.put("alergia",alergia.getText().toString());
+                parametros.put("passwords",contraseña.getText().toString());
 
-        UserRepository.create(name, ape,DNI, corr, ale, con);
-
-        finish();
-
+                return parametros;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 
 }
