@@ -5,93 +5,92 @@ import com.orm.dsl.Table;
 @Table
 public class User {
 
-    private Long id;
-    private String Nombre;
-    private String Apellido;
-    private String DNI;
-    private String Correo;
-    private String Alergia;
-    private String Contraseña;
+    private int id;
+    private String nombres;
+    private String apellidos;
+    private String dni;
+    private String edad;
+    private String correo;
+    private String alergia;
+    private String clave;
 
 
-    public User() {
-    }
-
-    public User(String nombre, String apellido, String dni, String correo, String alergia, String contraseña) {
-        Nombre = nombre;
-        Apellido = apellido;
-        DNI = dni;
-        Correo = correo;
-        Alergia = alergia;
-        Contraseña = contraseña;
-    }
-
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getNombre() {
-        return Nombre;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombre(String nombre) {
-        Nombre = nombre;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
-    public String getApellido() {
-        return Apellido;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setApellido(String apellido) {
-        Apellido = apellido;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
-    public String getDNI() {
-        return DNI;
+    public String getDni() {
+        return dni;
     }
 
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getEdad() {
+        return edad;
+    }
+
+    public void setEdad(String edad) {
+        this.edad = edad;
     }
 
     public String getCorreo() {
-        return Correo;
+        return correo;
     }
 
     public void setCorreo(String correo) {
-        Correo = correo;
+        this.correo = correo;
     }
 
     public String getAlergia() {
-        return Alergia;
+        return alergia;
     }
 
     public void setAlergia(String alergia) {
-        Alergia = alergia;
+        this.alergia = alergia;
     }
 
-    public String getContraseña() {
-        return Contraseña;
+    public String getClave() {
+        return clave;
     }
 
-    public void setContraseña(String contraseña) {
-        Contraseña = contraseña;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
+
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                "Nombre='" + Nombre + '\'' +
-                ", Apellido='" + Apellido + '\'' +
-                ", DNI='" + DNI + '\'' +
-                ", Correo='" + Correo + '\'' +
-                ", Alergia='" + Alergia + '\'' +
-                ", Contraseña='" + Contraseña + '\'' +
+                ", nombres='" + nombres + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", dni='" + dni + '\'' +
+                ", edad='" + edad + '\'' +
+                ", correo='" + correo + '\'' +
+                ", alergia='" + alergia + '\'' +
+                ", clave='" + clave + '\'' +
                 '}';
     }
 }

@@ -20,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                 nextActivity();
             }
         },3000);
@@ -33,7 +33,7 @@ public class SplashActivity extends AppCompatActivity {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         if(sp.getBoolean("islogged", false)){
 
-            startActivity(new Intent(this,InicioMedi.class));
+            startActivity(new Intent(this, MediActivity.class));
 
         }else{
 

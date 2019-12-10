@@ -11,13 +11,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.InfoActivity"></activity>
-
+        <activity android:name=".activity.InfoEnfermedadActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".activity.InfoLaboratorioActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".activity.InfoNaturalActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".activity.UbicacionMap"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".activity.EnfermedadesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.InfoGenericoActivity" />
         <activity
             android:name=".activity.InfoSplashActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.InicioMedi"
+            android:name=".activity.MediActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.RegistroActivity"
@@ -31,10 +45,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
         <meta-data
             android:name="DATABASE"
             android:value="sugarormapp.db" />
@@ -48,7 +65,9 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.example.mediinf.models" />
     </application>
-
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

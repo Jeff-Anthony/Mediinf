@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.InfoEnfermedadActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+    <ImageView
+        android:id="@+id/info_imagen"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:srcCompat="@drawable/ic_profile"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"/>
+
+
+     <TextView
+         android:id="@+id/enf_nombre_item"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="Nombre-Enfermedad"
+         android:textStyle="bold"
+         android:layout_marginBottom="10dp"
+         android:textSize="20dp"
+
+         />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción:"
+            android:textStyle="bold"
+            android:textSize="15dp"
+
+            />
+
+
+      <TextView
+          android:id="@+id/enf_descripcion_item"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Descripcion de Todo sobre hay que decir de la enfermedadsaaasas"
+          android:layout_marginBottom="10dp"
+          />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sintomas:"
+            android:textSize="15dp"
+            android:textStyle="bold"
+
+            />
+
+
+        <TextView
+            android:id="@+id/enf_sintomas_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Todos los sintomas sobre la enfermedad se abarcara nen esta sección"
+            android:layout_marginBottom="10dp"
+
+            />
+
+
+        <TextView
+            android:id="@+id/enf_medica_recomendados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medicamentos Recomendados:"
+            android:textStyle="bold"
+            android:textSize="15dp"
+
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="| Generico: "
+                android:textStyle="bold"
+                android:textSize="15dp"
+
+                />
+
+        <TextView
+            android:id="@+id/enf_gen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/gen"
+            android:text="Generico"
+            android:textSize="15dp"
+
+            />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/lab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="| Laboratorio: "
+                android:textStyle="bold"
+                android:textSize="15dp"
+
+                />
+
+
+        <TextView
+            android:id="@+id/enf_lab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/lab"
+            android:text="Laboratorio"
+            android:textSize="15dp"
+
+            />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/nat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="| Natural: "
+                android:textStyle="bold"
+                android:textSize="15dp"
+
+                />
+
+
+        <TextView
+            android:id="@+id/enf_nat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/nat"
+            android:text="Natural"
+            android:textSize="15dp"
+
+            />
+
+        </RelativeLayout>
+
+
+     </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,5 +1,6 @@
 package com.example.mediinf.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,15 +27,17 @@ import com.example.mediinf.fragments.medicinas_laboratorio;
 import com.example.mediinf.fragments.medicinas_naturales;
 
 
-public class InicioMedi extends AppCompatActivity{
+public class MediActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
-
+    private static final String TAG = EnfermedadesActivity.class.getSimpleName();
 
     private Button firstButton;
     private Button secontButton;
     private Button thirdButton;
     private DrawerLayout drawerLayout;
+    private SearchView buscar;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,13 +90,13 @@ public class InicioMedi extends AppCompatActivity{
                 // Do action by menu item id
                 switch (menuItem.getItemId()) {
                     case R.id.nav_home:
-                        Toast.makeText(InicioMedi.this, "Go home...", Toast.LENGTH_SHORT).show();
+                        home();
                         break;
                     case R.id.nav_locations:
-                        Toast.makeText(InicioMedi.this, "Go locations...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MediActivity.this, "Go locations...", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.nav_settings:
-                        Toast.makeText(InicioMedi.this, "Go settings...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MediActivity.this, "Go settings...", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.nav_logout:
                                   callLogout();
@@ -135,6 +139,11 @@ public class InicioMedi extends AppCompatActivity{
             }
         });
 
+        buscar = findViewById(R.id.busqueda);
+        buscar.setOnQueryTextListener(this);
+
+        showfragment1();
+
     }
 
 
@@ -169,7 +178,13 @@ public class InicioMedi extends AppCompatActivity{
         finish();
     //Tambien podemos reedireccionar al loginActivity
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+
+    }
+
+    private void home(){
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
 
     }
@@ -179,9 +194,14 @@ public class InicioMedi extends AppCompatActivity{
 
     public void showfragment1(){
 
+
+
+
         FragmentManager frag= getSupportFragmentManager();
-        Fragment fragment = new medicinas_generales();
-        frag.beginTransaction().replace(R.id.content,fragment).commit();
+        final Fragment fragment = new medicinas_generales();
+        frag.beginTransaction().replace(R.id.content, fragment).commit();
+
+
     }
 
 
@@ -201,5 +221,13 @@ public class InicioMedi extends AppCompatActivity{
     }
 
 
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
 
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
+    }
 }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.InicioMedi">
+    tools:context=".activity.MediActivity">
 
 
     <android.support.v4.widget.DrawerLayout
@@ -29,7 +29,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <ImageView
+                    android:layout_marginLeft="240dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_width="110dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/mini_logo"
+                    />
+
+            </android.support.v7.widget.Toolbar>
+
+
+
+
         </android.support.design.widget.AppBarLayout>
 
         <!-- Bloque Contenido -->
@@ -53,12 +67,6 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/titulo_busqueda"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="26dp"
-                    android:text="Busqueda de Medicamentos"/>
 
 
                 <SearchView

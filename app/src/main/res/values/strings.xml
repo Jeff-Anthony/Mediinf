@@ -2,5 +2,5 @@
     <string name="app_name">Mediinf</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ip_servidor">192.168.1.16:8090</string>
 </resources>

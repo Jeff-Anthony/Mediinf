@@ -14,21 +14,6 @@ public class MedicamentosRepository_lab {
         return medi;
     }
 
-    static {
-        medid.add(new Medicamentos_lab(001,"Gripe","Laboratorio","Rapivab","rapivab1",
-                "Es una pastilla para la gripe que ayuda a aliviar el dolor de la garganta y mucosidad en la garganta", "S/4.00"));
-
-        medid.add(new Medicamentos_lab(002,"Gripe","General","Bisolvon","bisolvon",
-                "Es una pastilla para la gripe que ayuda a aliviar el dolor de la garganta previene futuros resfrios comunes en el dia a dia" +
-                        "y genera bienestar en los proximos dias siguientes", "S/1.50"));
-
-        medid.add(new Medicamentos_lab(003,"Gripe","General","Tylenol","gripe3",
-                "Es una pastilla para la gripe que ayuda a aliviar el dolor de la garganta y mucosidad en la garganta", "S/2.00"));
-
-        medid.add(new Medicamentos_lab(004,"Gripe","General","GripaVick","gripe4",
-                "Es una pastilla para la gripe que ayuda a aliviar el dolor de la garganta y mucosidad en la garganta", "S/1.20"));
-
-    }
 
 
     public static List<Medicamentos_lab> getMedicamentos() {

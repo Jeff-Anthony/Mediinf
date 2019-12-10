@@ -30,7 +30,7 @@ public class InfoSplashActivity extends AppCompatActivity {
 
     public void showInicio(){
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
 
 
             startActivity(intent);

@@ -6,52 +6,30 @@ import com.orm.dsl.Table;
 public class Medicamentos_lab {
 
 
-    private int codigo;
-    private String trata_enfermedad;
-    private String tipo;
+    private Long id;
+    private String detalle;
     private String nombre;
     private String imagen;
     private String informacion;
     private String precio;
+    private String tipo;
+    private String sintomas;
 
-    public Medicamentos_lab(){
 
-
-
+    public Long getId() {
+        return id;
     }
 
-    public Medicamentos_lab(int codigo, String trata_enfermedad, String tipo, String nombre, String imagen, String informacion, String precio) {
-        this.codigo = codigo;
-        this.trata_enfermedad = trata_enfermedad;
-        this.tipo = tipo;
-        this.nombre = nombre;
-        this.imagen = imagen;
-        this.informacion = informacion;
-        this.precio = precio;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public String getDetalle() {
+        return detalle;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getTrata_enfermedad() {
-        return trata_enfermedad;
-    }
-
-    public void setTrata_enfermedad(String trata_enfermedad) {
-        this.trata_enfermedad = trata_enfermedad;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setDetalle(String detalle) {
+        this.detalle = detalle;
     }
 
     public String getNombre() {
@@ -86,16 +64,34 @@ public class Medicamentos_lab {
         this.precio = precio;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getSintomas() {
+        return sintomas;
+    }
+
+    public void setSintomas(String sintomas) {
+        this.sintomas = sintomas;
+    }
+
+
     @Override
     public String toString() {
-        return "Medicamentos_gen{" +
-                "codigo=" + codigo +
-                ", trata_enfermedad='" + trata_enfermedad + '\'' +
-                ", tipo='" + tipo + '\'' +
+        return "Medicamentos_lab{" +
+                "id=" + id +
+                ", detalle='" + detalle + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", imagen='" + imagen + '\'' +
                 ", informacion='" + informacion + '\'' +
                 ", precio='" + precio + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", sintomas='" + sintomas + '\'' +
                 '}';
     }
 }

@@ -7,13 +7,13 @@
     android:focusable="true"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.LoginActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/medicamentos"
+        android:src="@drawable/medicamento"
         />
 
 
@@ -33,10 +33,8 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="210dp"
             android:layout_height="193dp"
-            app:civ_border_width="8dp"
-            android:layout_marginBottom="30dp"
-            app:civ_border_color="#3b83bd"
-            android:src="@drawable/mediinf"/>
+            android:alpha="1"
+            android:src="@drawable/logo"/>
 
 
         <TextView

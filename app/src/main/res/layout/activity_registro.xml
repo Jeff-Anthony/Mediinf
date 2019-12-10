@@ -7,13 +7,13 @@
     android:focusable="true"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.LoginActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/medicamentos"
+        android:src="@drawable/medicamento"
         />
 
 
@@ -29,10 +29,10 @@
         android:layout_centerInParent="true">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="114dp"
-            android:layout_height="114dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginBottom="15dp"
-            android:src="@drawable/mediinf"
+            android:src="@drawable/logo"
             app:civ_border_color="#3b83bd"
             app:civ_border_width="8dp" />
 
@@ -59,6 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Ingrese su Nombre"
+            android:maxLength="15"
             android:paddingRight="20dp"
             android:paddingLeft="20dp"
             android:paddingBottom="10dp"
@@ -74,6 +75,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Ingrese su Apellido"
+
+            android:maxLength="15"
             android:paddingRight="20dp"
             android:paddingLeft="20dp"
             android:paddingBottom="10dp"
@@ -99,13 +102,29 @@
             android:background="@drawable/text_box"
             android:textColorHint="#FFFF"
             />
-
+        <EditText
+            android:id="@+id/edad_registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Ingrese su Edad"
+            android:inputType="number"
+            android:maxLength="15"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/text_box"
+            android:textColorHint="#FFFF"
+            />
         <EditText
             android:id="@+id/correo_registro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Correo Electronico*"
+            android:maxLength="20"
             android:paddingRight="20dp"
             android:paddingLeft="20dp"
             android:paddingBottom="10dp"
@@ -127,8 +146,9 @@
             android:paddingTop="10dp"
             android:textColor="#FFFFFF"
             android:inputType="text"
+            android:maxLength="8"
             android:background="@drawable/text_box"
-            android:hint="Ingrese una Alergia"
+            android:hint="Ingrese una Alergia (Si/No)"
             />
 
         <EditText
@@ -138,6 +158,7 @@
             android:layout_marginBottom="10dp"
             android:hint="Ingrese su Contraseña*"
             android:inputType="textPassword"
+            android:maxLength="15"
             android:paddingRight="20dp"
             android:paddingLeft="20dp"
             android:paddingBottom="10dp"
@@ -157,6 +178,7 @@
             android:background="@drawable/button_ripple"
             android:textColor="@drawable/button_select"
             android:radius="50dp"
+            android:onClick="RegistroUsuario"
             android:text="Registrarse" />
 
         <Button
